@@ -98,15 +98,16 @@ public class Account {
    public static void transfer(Account from, Account to, double amount){
    	if (amount == 0)
    		return;
-   	else if (amound < 0){
-   		System.out.println("\aError: negative transfer ammount");
+   	else if (amount <= 0){
+   		System.out.println("Error: negative transfer ammount");
    		return;
    	}
 
-   	double bal = from.getBalance();
+//   	double bal = from.getBalance();
 
-	if (bal == from.withdraw(amount)) {
-		System.out.println("\aError: overdraw")
+	// assuming a $0.00 fee so that I don't overdraw
+	if (from.getBalance() == from.withdraw(amount, 0.0)) {
+		System.out.println("Error: overdraw");
 		return;
 	}
 
@@ -115,5 +116,4 @@ public class Account {
 
    }
 };
-
 
