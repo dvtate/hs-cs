@@ -2,7 +2,7 @@ import java.util.*;
 
 public class PairOfDice {
 	public Die die1, die2;
-
+	public
 	public PairOfDice(){
 		die1 = new Die();
 		die2 = new Die();
@@ -20,6 +20,7 @@ public class PairOfDice {
 
 	public final int roll()
 		{ return die1.roll() + die2.roll(); }
+
 
 
 };

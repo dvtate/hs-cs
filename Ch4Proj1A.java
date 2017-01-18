@@ -32,10 +32,11 @@ public class Ch4Proj1A {
       Account meyersAcct = new Account("Carol Meyers", 666666, 0.0);
       Account testaAcct = new Account("DV Tate Testa", 888888, 1000.00);
 
+
       // give some info on them
       System.out.println(testaAcct.toString());
       System.out.println(meyersAcct.toString());
-
+      std::cout <<meyersAcct.toString();
 
       // transfer all of my monies to meyers
       System.out.print("\nTransfering all of Tate's monies to Meyers' account...");

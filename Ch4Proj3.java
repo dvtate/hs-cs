@@ -1,5 +1,5 @@
-import java.util.*;
-
+/// Pair of dice boxcar counter
+/// 2016.11.4
 
 public class Ch4Proj3 {
 	public static void main(String[] javaSoLame我操){
@@ -15,7 +15,6 @@ public class Ch4Proj3 {
 
 		System.out.println("In 1000 rolls of a PairOfDice, there were " + boxcars + " boxcars.");
 	}
-
 
 
 };
