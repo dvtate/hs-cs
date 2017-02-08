@@ -1,5 +1,5 @@
 
-
+// this namespace is retarded...
 public class Average {
 	Average(){}
 
