@@ -1,6 +1,7 @@
 
 import java.util.Scanner;
 
+// java implementation of herons formula
 public class Ch2Lab {
 
 	public static void main(String[] args){
