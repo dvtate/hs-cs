@@ -1,7 +1,7 @@
 
 
-
-public class Ch2Proj2 {
+// this is a clock that has a pre-programmed time to custom format
+public class Ch2Proj02 {
 
 	public static void  main(String[] args){
 		
