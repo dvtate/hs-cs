@@ -1,18 +1,28 @@
 import java.util.*;
 
+
+// input given tasks and their priority and sort them by importance
+
 public class Ch5Proj01 {
 
-	private static int getMaxPriority(final Task[] taskList){
-		int ret = 0, maxVal = taskList[0].getPriority();
-	
-		for (int i = 0; i < taskList.length; i++)
-			if (!taskList[i].completed && taskList[i].getPriority() > maxVal) {
-				ret = i;
-				maxVal = taskList[i].getPriority();
-			}
 
-		return ret;
+	private static Task[] selectionSortTasks(Task[] arr){
+	 
+		for (int i = 0; i < arr.length - 1; i++) {
+		    int index = i;
+		    for (int j = i + 1; j < arr.length; j++)
+			if (arr[j].getPriority() < arr[index].getPriority()) 
+			    index = j;
+
+		    Task lessImportant = arr[index];
+		    arr[index] = arr[i];
+		    arr[i] = lessImportant;
+		}
+
+		return arr;
 	}
+
+
 
 	public static void main(String[] args){
 
@@ -22,41 +32,42 @@ public class Ch5Proj01 {
 		System.out.println("press [enter] when you're done");
 		Scanner stdin = new Scanner(System.in);
 		
+		// split into name-value pairs
 		String[] todoText = stdin.nextLine().split(" ");
 
-		// make an array of Tasks
+		// make an array of new Tasks
 		Task[] todoList = new Task[todoText.length];
-		for (int i=0; i < todoList.length; i++)
+		for (int i = 0; i < todoList.length; i++)
 		   todoList[i] = new Task();
-
+f
+		// for each name-value pair
 		for (int i = 0; i < todoList.length; i++) {
+
+			// split the name and value into separate strings 
 			String[] nameValuePair = todoText[i].split(":");
 			try {
 				todoList[i].setName(nameValuePair[0]);
 				todoList[i].setPriority(Integer.parseInt(nameValuePair[1]));
+				todoList[i].setCompleted(false);
+			// invalid number
 			} catch (NumberFormatException e) {
 				System.out.println("Invalid number " + nameValuePair[1]);
 				System.out.println("Try again.\n");
+
+				// restart the program
 				main(args);
 				return;
 			}
 		}
 
-
-				
-
-		for (int taskNumber = 0; taskNumber < todoList.length; taskNumber++) {
-			Task mostImportant = todoList[getMaxPriority(todoList)];
-			mostImportant.completed = true;
+		Task[] sortedList = selectionSortTasks(todoList);
 	
-			System.out.println(taskNumber + 1 + " : " + mostImportant.getName() + ":" + mostImportant.getPriority());
-
-			
-			
-			
 
 
-		}
+		// print the list
+		for (int i = todoList.length - 1; i >= 0; i--)
+			System.out.println(todoList.length - i + " : " + sortedList[i].getName() + ":" + sortedList[i].getPriority());
+
 	}
 
 
