@@ -5,13 +5,13 @@ import java.util.*;
 
 public class Ch5Proj01 {
 
-
+	// sorting algorithm
 	private static Task[] selectionSortTasks(Task[] arr){
-	 
+
 		for (int i = 0; i < arr.length - 1; i++) {
 		    int index = i;
 		    for (int j = i + 1; j < arr.length; j++)
-			if (arr[j].getPriority() < arr[index].getPriority()) 
+			if (arr[j].getPriority() < arr[index].getPriority())
 			    index = j;
 
 		    Task lessImportant = arr[index];
@@ -26,12 +26,13 @@ public class Ch5Proj01 {
 
 	public static void main(String[] args){
 
+		// print instructions
 		System.out.println("enter the tasks to sort.");
 		System.out.println("separate the task names and priorities with a colon");
 		System.out.println("separate the tasks with spaces (ie- \"taskA:32 taskB:45 ...\")");
 		System.out.println("press [enter] when you're done");
 		Scanner stdin = new Scanner(System.in);
-		
+
 		// split into name-value pairs
 		String[] todoText = stdin.nextLine().split(" ");
 
@@ -43,7 +44,7 @@ f
 		// for each name-value pair
 		for (int i = 0; i < todoList.length; i++) {
 
-			// split the name and value into separate strings 
+			// split the name and value into separate strings
 			String[] nameValuePair = todoText[i].split(":");
 			try {
 				todoList[i].setName(nameValuePair[0]);
@@ -60,9 +61,9 @@ f
 			}
 		}
 
-		Task[] sortedList = selectionSortTasks(todoList);
-	
 
+		// sort the tasks by importance
+		Task[] sortedList = selectionSortTasks(todoList);
 
 		// print the list
 		for (int i = todoList.length - 1; i >= 0; i--)
