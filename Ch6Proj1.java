@@ -4,8 +4,6 @@ import java.io.*;
 
 public class Ch6Proj1 {
 
-
-
 	public static void main(String[] args) {
 
 		// open file
@@ -13,7 +11,7 @@ public class Ch6Proj1 {
 		try { fil = new Scanner(new File("numbers.txt")); }
 		catch (FileNotFoundException e) {
 			System.out.println("error: numbers.txt not found");
-			fil = null;
+			return;
 		}
 
 		int[] occurances = new int[51];
