@@ -2,7 +2,6 @@ import java.util.*;
 
 public class PairOfDice {
 	public Die die1, die2;
-	public
 	public PairOfDice(){
 		die1 = new Die();
 		die2 = new Die();
