@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			body{background-color: grey;} 
+			div.main{background-color: white;}
+			div.mar{ border: 1px solid black; margin-left: 5%; margin-right: 5%;}
+			table, th, td {border: 1px solid black;}
+		</style>
+		<title>JavaScript</title>
+
+	</head>
+	<body>
+		<div class="main">
+			<center>
+				<h1><u>Tate & JavaScript</u></h1>
+			</center>
+		</div><div class="main"><hr/>
+			<div class="mar">
+				<center>
+					<p>Dag # 9<br/><hr/><br/>
+					6<sup><u>th</u></sup> Period<br/><hr/><br/>
+					<u>By</u>: (Dustin Van) Tate Testa</p>
+				</center>
+			</div>
+			<div class="mar"><hr/>
+				<center>
+					<hr/><h4><a href="http://www.dvtate.hostoi.com/">my (real) website</a></h4>
+				</center>
+			</div>
+		</div>
+		<hr/>
+		<script type="text/javascript">
+			<!--
+			/*
+			var now = new Date(); //ny date object
+			var hh = now.getHours(); //get local tid i hrs.
+			var utc_hh = now.getUTCHours(); //get universal tid
+			var mn = now.getMinutes(); //mins.
+			var ss = now.getSeconds(); //secs.
+					
+			if(mn <= 9) mn = "0" +mn;
+			//make minute value 2 digits
+			
+			//output tiden
+			var wet = "PC time: "+hh+":"+mn+" : "+ss+"\n\n";
+			var utc = "universal time: "+utc_hh+":"+mn+" : "+ss;
+			alert( wet + utc );
+			*//*
+			var num = 0;//ny int num
+			function timeout(){
+				num++;//increment num
+				alert("10-second msg #:"+num);
+				window.setTimeout("timeout()", 10000);
+			
+			}
+			
+			timeout();//call the function
+			*/
+			var num = 0, tid
+			(function timeout(){
+				num++;
+				if(num==3){
+					alert("Ok - i told you twice");
+					window.clearTimeout(tid);//stop timer
+				}else{
+					alert("10-second msg #:"+num);
+					tid = window.setTimeout("timeout()", 10000);
+				}
+			})();
+					
+			//-->
+		</script>
+	</body>
+</html>

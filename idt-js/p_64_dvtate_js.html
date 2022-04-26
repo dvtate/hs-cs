@@ -1,0 +1,81 @@
+<HTML>
+
+	<HEAD>
+		<TITLE>Tate's JavaScript</TITLE>
+
+
+
+	</HEAD>
+
+	<BODY onload="javascript: tick()">
+		<H1>JavaScript - Day 16 - Period 2 - Date object: page 64: JavaScript clock</H1>
+
+		<FONT size="72">
+			<p id="demo"></p>
+		</FONT>
+
+		<FORM id="f">
+			JavaScript time is now: <input type="text" name="clock">
+		</FORM>
+		<SCRIPT TYPE = "text/javascript">
+			/*
+			var now = new Date(); //ny date object
+			var hh = now.getHours(); //get local tid i hrs.
+			var utc_hh = now.getUTCHours(); //get universal tid
+			var mn = now.getMinutes(); //mins.
+			var ss = now.getSeconds(); //secs.
+					
+			if(mn <= 9) mn = "0" +mn;
+			//make minute value 2 digits
+			
+			//output tiden
+			var wet = "PC time: "+hh+":"+mn+" : "+ss+"\n\n";
+			var utc = "universal time: "+utc_hh+":"+mn+" : "+ss;
+			alert( wet + utc );
+			*//*
+			var num = 0;//ny int num
+			function timeout(){
+				num++;//increment num
+				alert("10-second msg #:"+num);
+				window.setTimeout("timeout()", 10000);
+			
+			}
+			
+			timeout();//call the function
+			*//*
+			var num = 0, tid
+			function timeout(){
+				num++;
+				if(num==3){
+					alert("Ok - i told you twice");
+					window.clearTimeout(tid);//stop timer
+				}else{
+					alert("10-second msg #:"+num);
+					tid = window.setTimeout("timeout()", 10000);
+				}
+			}
+			timeout();
+			*/
+			function tick(){
+				// create a new date object
+				var nu = new Date();//ny date object
+				//get: hrs, mins, seconds
+				var hh = nu.getHours();
+				var mn = nu.getMinutes();
+				var ss = nu.getSeconds();
+				if(hh<=9) hh="0"+hh;
+				//force
+				if(mn<=9) mn="0"+mn;
+				if(ss<=9) ss="0"+ss;
+				// JavaScript changing the color of the "f" HTML form
+				document.getElementById("f").style.backgroundColor="orange";
+
+				// JavaScript writing to the innerHTML of the HTML tag with the id of "demo"
+				document.getElementById("demo").innerHTML = hh + ": " + mn + ": " + ss;
+
+				// set the interval to one second
+				window.setTimeout("tick()", 1000);
+			}
+		</SCRIPT>
+	</BODY>
+</HTML>
